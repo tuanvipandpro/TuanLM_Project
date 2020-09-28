@@ -1,0 +1,184 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <!-- Configuration for the default package. -->
+    <package name="default" extends="struts-default" namespace="/">
+        <action name="" class="tuanlm.action.HomeAction">
+            <result name="success">home.jsp</result>
+        </action>
+        <action name="registerLink">
+            <result>register.jsp</result>
+        </action>
+        <action name="createSaleLink">
+            <result>createSaleCode.jsp</result>
+        </action>
+        <action name="loginLink">
+            <result>login.html</result>
+        </action>
+        <action name="forgetLink">
+            <result>forget.jsp</result>
+        </action>
+        <action name="cart">
+            <result>cart.jsp</result>
+        </action>      
+        <action name="createCarLink">
+            <result>createCar.jsp</result>
+        </action>      
+        <action name="loanLink">
+            <result>loan.jsp</result>
+        </action>      
+        <action name="login" class="tuanlm.action.LoginAction">
+            <result name="admin" type="redirectAction">
+                <param name="actionName">admin</param>
+            </result>
+            <result name="home" type="redirectAction">
+                <param name="actionName">home</param>
+            </result>
+            <result name="fail" type="redirect">invalid.html</result>
+            <result name="verify" type="redirectAction">
+                <param name="actionName">mail</param>
+                <param name="email">${email}</param>            
+            </result>
+        </action>
+        <action name="home" class="tuanlm.action.HomeAction">
+            <result name="success">home.jsp</result>
+        </action>
+        <action name="admin" class="tuanlm.action.AdminAction">
+            <result name="success">admin.jsp</result>
+            <result name="fail">Error.html</result>
+        </action>
+        <action name="register" class="tuanlm.action.RegisterAction">
+            <exception-mapping exception="java.sql.SQLException" result="input"/>
+            <result name="success" type="redirectAction">
+                <param name="actionName">mail</param>
+                <param name="email">${email}</param>                
+            </result>
+            <result name="fail">Error.html</result>
+            <result name="input">register.jsp</result>
+        </action>
+        <action name="mail" class="tuanlm.action.MailAction">
+            <result name="success">verify.jsp</result>
+        </action>
+        <action name="verify" class="tuanlm.action.VerifyAction">
+            <result name="success">login.html</result>
+            <result name="fail" type="redirectAction">
+                <param name="actionName">mail</param>
+                <param name="email">${email}</param>                
+            </result>
+        </action>
+        <action name="logout" class="tuanlm.action.LogoutAction">
+            <result name="success">login.html</result>
+        </action>
+        <action name="history" class="tuanlm.action.HistoryAction">
+            <result name="success">history.jsp</result>
+            <result name="fail">Error.html</result>
+        </action>
+        <action name="deleteHistory" class="tuanlm.action.DeleteHistoryAction">
+            <result name="success" type="redirectAction">
+                <param name="actionName">history</param>
+            </result>
+            <result name="fail">Error.html</result>
+        </action>
+        <action name="HistorySearch" class="tuanlm.action.HistorySearchAction">
+            <result name="success">history.jsp</result>
+            <result name="fail">Error.html</result>
+        </action>
+        <action name="detail" class="tuanlm.action.DetailsAction">
+            <result name="success">feedback.jsp</result>
+            <result name="fail">Error.html</result>
+        </action>
+        <action name="detailsLink" class="tuanlm.action.RentingAction">
+            <result name="success">details.jsp</result>
+            <result name="fail">Error.html</result>
+        </action>
+        <action name="feedback" class="tuanlm.action.FeedbackAction">
+            <result name="success" type="redirect">thanks.html</result>
+            <result name="fail">Error.html</result>
+        </action>     
+        <action name="regisGoogle" class="tuanlm.action.RegisterGoogleAction">
+            <result name="success" type="redirectAction">
+                <param name="actionName">home</param>
+            </result>
+            <result name="fail">Error.html</result>
+            <result name="input">google.jsp</result>
+        </action>     
+        <action name="google" class="tuanlm.action.GoogleAction">
+            <result name="success" type="redirectAction">
+                <param name="actionName">home</param>
+            </result>
+            <result name="fail">Error.html</result>
+            <result name="new">google.jsp</result>
+        </action> 
+        <action name="buy" class="tuanlm.action.BuyAction">
+            <result name="success" type="redirectAction">
+                <param name="actionName">home</param>
+            </result>
+            <result name="fail">buyError.html</result>
+        </action>
+        <action name="shopping" class="tuanlm.action.ShoppingAction">
+            <result name="success">cart.jsp</result>
+            <result name="fail">Error.html</result>
+        </action> 
+        <action name="payment" class="tuanlm.action.PaymentAction">
+            <result name="success">paymentSuccess.html</result>
+            <result name="out">payError.html</result>
+            <result name="fail">Error.html</result>
+            <result name="sale">saleError.html</result>
+        </action>   
+        <action name="update" class="tuanlm.action.UpdateAction">
+            <result name="success" type="redirectAction">
+                <param name="actionName">admin</param>
+            </result>
+            <result name="fail">ErrorAdmin.html</result>
+        </action>
+        <action name="forget" class="tuanlm.action.ForgetAction">
+            <result name="success">codeForget.jsp</result>
+            <result name="fail">emailNotFound.html</result>
+        </action>                                                      
+        <action name="forgetConfirm" class="tuanlm.action.CheckForgetAction">
+            <result name="success">newPassword.jsp</result>
+            <result name="fail" type="redirectAction">
+                <param name="actionName">forget</param>
+                <param name="email">${email}</param>                
+            </result>
+        </action>
+        <action name="changePassword" class="tuanlm.action.ChangeAction">
+            <result name="success">login.html</result>
+            <result name="fail">Error.html</result>
+            <result name="input">newPassword.jsp</result>
+        </action>                                                                    
+        <action name="createCar" class="tuanlm.action.CreateAction">
+            <result name="success" type="redirectAction">
+                <param name="actionName">admin</param>
+            </result>
+            <result name="fail">Error.html</result>
+            <result name="input">createCar.jsp</result>
+        </action>                                                                    
+        <action name="lendCar" class="tuanlm.action.LendAction">
+            <result name="success">lendSuccess.html</result>
+            <result name="fail">Error.html</result>
+            <result name="input">loan.jsp</result>
+        </action>                                                                    
+        <action name="adminFeedback" class="tuanlm.action.AdminFeedbackAction">
+            <result name="success">adminFeedback.jsp</result>
+            <result name="fail">Error.html</result>
+        </action>                                                                    
+        <action name="viewCar" class="tuanlm.action.ViewCarAction">
+            <result name="success">carInfo.jsp</result>
+            <result name="fail">Error.html</result>
+        </action>                                                                    
+        <action name="managerAdmin" class="tuanlm.action.ManagerAction">
+            <result name="success">manager.jsp</result>
+            <result name="fail">Error.html</result>
+        </action>                                                                    
+        <action name="createSale" class="tuanlm.action.SaleAction">
+            <result name="success" type="redirectAction">
+                <param name="actionName">admin</param>
+            </result>
+            <result name="fail">Error.html</result>
+            <result name="input">createSaleCode.jsp</result>
+        </action>                                                                    
+    </package>
+</struts>

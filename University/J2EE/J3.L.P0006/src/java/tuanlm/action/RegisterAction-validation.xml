@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <!DOCTYPE validators PUBLIC
+  		"-//Apache Struts//XWork Validator 1.0.3//EN"
+  		"http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+<validators>
+    <field name="email">
+        <field-validator type="requiredstring">
+            <param name="trim">true</param>
+            <message>
+                Email is required !
+            </message>
+        </field-validator>
+        <field-validator type="email">
+            <message>
+                Email is not correct format !
+            </message>
+        </field-validator>
+    </field>
+    <field name="password">
+        <field-validator type="requiredstring">
+            <param name="trim">true</param>
+            <message>
+                Password is required !
+            </message>
+        </field-validator>
+    </field>
+    <field name="confirm">
+        <field-validator type="fieldexpression">
+            <param name="expression">confirm==password</param>
+            <message>
+                Confirm must be like password !!!
+            </message>
+        </field-validator>
+    </field>
+    <field name="name">
+        <field-validator type="requiredstring">
+            <param name="trim">true</param>
+            <message>
+                Fullname is required !
+            </message>
+        </field-validator>
+    </field>
+    <field name="phone">
+        <field-validator type="requiredstring">
+            <param name="trim">true</param>
+            <message>
+                Phone is required !
+            </message>
+        </field-validator>
+        <field-validator type="regex">
+            <param name="expression">[0-9]{10}</param>
+            <message>
+                Phone is not correct format !
+            </message>
+        </field-validator>
+    </field>
+    <field name="address">
+        <field-validator type="requiredstring">
+            <param name="trim">true</param>
+            <message>
+                Address is required !
+            </message>
+        </field-validator>
+    </field>                    
+</validators>
