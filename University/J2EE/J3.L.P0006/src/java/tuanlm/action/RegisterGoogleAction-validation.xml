@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <!DOCTYPE validators PUBLIC
+  		"-//Apache Struts//XWork Validator 1.0.3//EN"
+  		"http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+<validators>
+    <field name="googlePhone">
+        <field-validator type="requiredstring">
+            <param name="trim">true</param>
+            <message>
+                Phone is required !
+            </message>
+        </field-validator>
+        <field-validator type="regex">
+            <param name="expression">[0-9]{10}</param>
+            <message>
+                Phone is not correct format !
+            </message>
+        </field-validator>
+    </field>
+    <field name="googleName">
+        <field-validator type="requiredstring">
+            <param name="trim">true</param>
+            <message>
+                Name is required !
+            </message>
+        </field-validator>
+    </field>
+    <field name="googleAddress">
+        <field-validator type="requiredstring">
+            <param name="trim">true</param>
+            <message>
+                Address is required !
+            </message>
+        </field-validator>
+    </field>
+</validators>                
