@@ -1,7 +1,5 @@
 package tuanlm.fpt.android;
 
-
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.viewpager2.widget.ViewPager2;
@@ -15,14 +13,8 @@ import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
 
-import tuanlm.fpt.android.adapter.RecyclerTab2Adapter;
 import tuanlm.fpt.android.adapter.TabMainAdapter;
 import tuanlm.fpt.android.fragment.Tab1Fragment;
 import tuanlm.fpt.android.fragment.Tab2Fragment;
