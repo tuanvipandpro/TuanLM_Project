@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">AndroidS3</string>
+    <string-array name="spinner_array">
+        <item>VN</item>
+        <item>EN</item>
+        <item>US</item>
+        <item>JP</item>
+        <item>KR</item>
+    </string-array>
+</resources>

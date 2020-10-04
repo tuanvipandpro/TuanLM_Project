@@ -27,11 +27,23 @@
         <FrameLayout
             android:id="@+id/fgContainer"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingActionButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:layout_marginTop="520dp"
+                android:layout_marginLeft="320dp"
+                android:onClick="showMessage"
+                app:srcCompat="@drawable/ic_baseline_email_24" />
+        </FrameLayout>
 
     </LinearLayout>
 
     <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nvMain"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="start"
